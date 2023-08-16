@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TournamentManagment</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li><%= link_to 'home', root_path %> </li>
+        <li><%= link_to 'enter teams', tournament_enter_teams_path %> </li>
+        <li><%= link_to 'generate results', tournament_generate_results_path %> </li>
+        <li><%= link_to 'create team', tournament_create_teams_path %> </li>
+
+      </ul>
+    </nav>
+    <main>
+      <%= yield %>
+    </main>
+  </body>
+</html>

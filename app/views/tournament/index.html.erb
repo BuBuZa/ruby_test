@@ -1,0 +1,8 @@
+<h1>Результаты турнира</h1>
+
+<h2>Команды</h2>
+<ul>
+  <% @teams.each do |team| %>
+    <li><%= team.name %></li>
+  <% end %>
+</ul>

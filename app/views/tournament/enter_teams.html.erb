@@ -1,0 +1,21 @@
+<h1>Ввод названий команд</h1>
+
+<%= form_tag tournament_distribute_teams_path, method: :post do %>
+  <table>
+    <tr>
+      <% @teams.each_slice(4) do |team_group| %>
+        <% team_group.each do |team| %>
+          <td>
+            <%= label_tag "teams_#{team.id}", team.name %>
+            <%= check_box_tag 'teams[]', team.name, false, id: "teams_#{team.id}" %>
+          </td>
+        <% end %>
+        <% (4 - team_group.size).times do %>
+          <td></td>
+        <% end %>
+    </tr>
+    <% end %>
+  </table>
+  <%= submit_tag 'Распределить команды' %>
+<% end %>
+
